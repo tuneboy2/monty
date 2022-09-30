@@ -24,7 +24,7 @@ void f_push(stack_t **stack, unsigned int num)
 
 /**
  * f_pall - print all values on the stack
- * @stack: Address of Head of Stack
+ * @stack: Addrss of Head of Stack
  * @num: Line count
  *
  * Return: void
@@ -100,4 +100,41 @@ void f_pop(stack_t **stack, unsigned int num)
 		head->next->prev = head->prev;
 	}
 	free(head);	
+}
+
+/**
+ * swap - swaps the top two elements of the stack.
+ * @stack: Address of Head of Stack
+ * @num: Line count
+ *
+ * Return: void
+ */
+
+void f_swap(stack_t **stack, unsigned int num)
+{
+	stack_t *head = *stack, *temp;
+	int no = 0;
+
+	while (head)
+	{
+		no++;
+		head = head->next;
+	}
+
+	if (no < 2)
+	{
+		fprintf(stderr, "L%d: can't swap, stack too short\n", num);
+		fclose(fil);
+		free_stack(*stack);
+		exit(EXIT_FAILURE);
+	}
+
+	head = *stack;
+		temp = head->next;
+		temp->prev = head->prev;
+		head->next = temp->next;
+		temp->next->prev = head;
+		temp->next = head;
+		head->prev = temp;
+		*stack = temp;
 }
