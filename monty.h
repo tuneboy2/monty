@@ -50,5 +50,6 @@ void free_stack(stack_t *);
 /* opcodes */
 void f_push(stack_t **, unsigned int);
 void f_pall(stack_t **, unsigned int);
+void f_pint(stack_t **, unsigned int);
 
 #endif

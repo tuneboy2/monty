@@ -17,6 +17,7 @@ void execute(stack_t **stack, FILE *file, char *content,  int counter)
 	instruction_t opst[] = {
 			{"push", f_push},
 			{"pall", f_pall},
+			{"pint", f_pint},
 			{NULL, NULL}
 			};
 
