@@ -93,9 +93,11 @@ void f_pop(stack_t **stack, unsigned int num)
 	if (!head->next)
 	{
 		*stack = NULL;
-		return;
 	}
-	*stack = head->next;
-	head->next->prev = head->prev;
-	
+	else
+	{
+		*stack = head->next;
+		head->next->prev = head->prev;
+	}
+	free(head);	
 }
