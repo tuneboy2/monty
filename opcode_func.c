@@ -128,13 +128,17 @@ void f_swap(stack_t **stack, unsigned int num)
 		free_stack(*stack);
 		exit(EXIT_FAILURE);
 	}
-
-	head = *stack;
+	else
+	{
+		head = *stack;
 		temp = head->next;
 		temp->prev = head->prev;
 		head->next = temp->next;
-		temp->next->prev = head;
 		temp->next = head;
 		head->prev = temp;
 		*stack = temp;
+
+		if (no != 2)
+			temp->next->prev = head;
+	}
 }
