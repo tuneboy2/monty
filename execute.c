@@ -20,6 +20,7 @@ void execute(stack_t **stack, FILE *file, char *content,  int counter)
 			{"pint", f_pint},
 			{"pop", f_pop},
 			{"swap", f_swap},
+			{"nop", f_nop},
 			{NULL, NULL}
 			};
 
