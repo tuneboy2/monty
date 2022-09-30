@@ -69,3 +69,33 @@ void f_pint(stack_t **stack, unsigned int num)
 
 	printf("%d\n", head->n);
 }
+
+/**
+ * f_pop - removes the top element of the stack.
+ * @stack: Address of Head of Stack
+ * @num: Lone count
+ *
+ * Return: void
+ */
+
+void f_pop(stack_t **stack, unsigned int num)
+{
+	stack_t *head = *stack;
+
+	if (!head)
+	{
+		fprintf(stderr, "L%d: can't pop an empty stack\n", num);
+		fclose(fil);
+		free_stack(*stack);
+		exit(EXIT_FAILURE);
+	}
+
+	if (!head->next)
+	{
+		*stack = NULL;
+		return;
+	}
+	*stack = head->next;
+	head->next->prev = head->prev;
+	
+}
