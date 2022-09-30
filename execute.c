@@ -30,6 +30,9 @@ void execute(stack_t **stack, FILE *file, char *content,  int counter)
 			};
 
 	op = strtok(content, " \t\n");
+	if (op && op[i] == '#')
+		return;
+
 	value = strtok(NULL, " \t\n");
 
 	while (op && opst[i].opcode)
