@@ -23,6 +23,7 @@ void execute(stack_t **stack, FILE *file, char *content,  int counter)
 			{"add", f_add},
 			{"nop", f_nop},
 			{"sub", f_sub},
+			{"div", f_div},
 			{NULL, NULL}
 			};
 
