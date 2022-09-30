@@ -10,7 +10,7 @@
 
 void f_push(stack_t **stack, unsigned int num)
 {
-	if (!value)
+	if (!value || atoi(value) < 0)
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", num);
 		free_stack(*stack);
