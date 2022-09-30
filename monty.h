@@ -55,5 +55,6 @@ void f_pop(stack_t **, unsigned int);
 void f_swap(stack_t **, unsigned int);
 void f_nop(stack_t **, unsigned int);
 void f_add(stack_t **, unsigned int);
+void f_sub(stack_t **, unsigned int);
 
 #endif

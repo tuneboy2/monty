@@ -47,3 +47,39 @@ void f_add(stack_t **stack, unsigned int num)
 	}
 }
 
+/**
+ * sub - subtracts the top element of the stack from the second top element of
+ * the stack
+ * @stack: Address of Head of the Stack
+ * @num: Line count
+ *
+ * Return: void
+ */
+
+void f_sub(stack_t **stack, unsigned int num)
+{
+	stack_t *head = *stack;
+	int no = 0;
+
+	while (head && no < 2)
+	{
+		no++;
+		head = head->next;
+	}
+
+	head = *stack;
+	if (no < 2)
+	{
+		fprintf(stderr, "L%d: can't sub, stack too short\n", num);
+		fclose(fil);
+		free_stack(*stack);
+		exit(EXIT_FAILURE);
+	}
+	else
+	{
+		head->next->n = head->next->n - head->n;
+		*stack = head->next;
+		free(head);
+	}
+}
+
