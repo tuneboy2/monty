@@ -58,5 +58,6 @@ void f_add(stack_t **, unsigned int);
 void f_sub(stack_t **, unsigned int);
 void f_div(stack_t **, unsigned int);
 void f_mul(stack_t **, unsigned int);
+void f_mod(stack_t **, unsigned int);
 
 #endif
