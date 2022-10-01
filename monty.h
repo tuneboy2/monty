@@ -60,5 +60,6 @@ void f_div(stack_t **, unsigned int);
 void f_mul(stack_t **, unsigned int);
 void f_mod(stack_t **, unsigned int);
 void f_pchar(stack_t **, unsigned int);
+void f_pstr(stack_t **, unsigned int);
 
 #endif

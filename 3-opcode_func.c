@@ -74,3 +74,29 @@ void f_pchar(stack_t **stack, unsigned int num)
 
 	printf("%c\n", no);
 }
+
+/**
+ * f_pstr - prints the string starting at the top of the stack.
+ * @stack: Address of Head Stack
+ * @num; line countet
+ *
+ * Return: void
+ */
+
+void f_pstr(stack_t **stack, __attribute__((unused))unsigned int num)
+{
+	stack_t *head = *stack;
+
+	if (!head)
+		putchar(10);
+
+	while (head)
+	{
+		if (head->n == 0 || head->n < 0 || head->n > 127)
+			break;
+	
+		putchar(head->n);
+		head = head->next;
+	}
+	putchar(10);
+}
