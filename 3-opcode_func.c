@@ -64,7 +64,7 @@ void f_pchar(stack_t **stack, unsigned int num)
 	}
 
 	no = head->n;
-	if (no < 0 && no > 127)
+	if (no < 0 ||  no > 127)
 	{
 		fprintf(stderr, "L%d: can't pchar, value out of range\n", num);
 		fclose(fil);
