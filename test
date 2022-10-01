@@ -1,7 +1,2 @@
-push 2
-push 10
-#pint
-mul
-push 3
-mod
-pall
+push 72
+pchar

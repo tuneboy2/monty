@@ -26,6 +26,7 @@ void execute(stack_t **stack, FILE *file, char *content,  int counter)
 			{"mul", f_mul},
 			{"mod", f_mod},
 			{"div", f_div},
+			{"pchar", f_pchar},
 			{NULL, NULL}
 			};
 

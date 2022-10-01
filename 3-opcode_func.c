@@ -41,3 +41,36 @@ void f_mod(stack_t **stack, unsigned int num)
 	*stack = head->next;
 	free(head);
 }
+
+/**
+ * f_pchar - prints the char at the top of the stack
+ * @stack: Address of Head stack
+ * @num: Line count
+ *
+ * Return: void
+ */
+
+void f_pchar(stack_t **stack, unsigned int num)
+{
+	stack_t *head = *stack;
+	int no;
+
+	if (!head)
+	{
+		fprintf(stderr, "L%d: can't pchar, stack empty\n", num);
+		fclose(fil);
+		free_stack(*stack);
+		exit(EXIT_FAILURE);
+	}
+
+	no = head->n;
+	if (no < 0 && no > 127)
+	{
+		fprintf(stderr, "L%d: can't pchar, value out of range\n", num);
+		fclose(fil);
+		free_stack(*stack);
+		exit(EXIT_FAILURE);
+	}
+
+	printf("%c\n", no);
+}
