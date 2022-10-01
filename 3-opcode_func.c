@@ -87,9 +87,6 @@ void f_pstr(stack_t **stack, __attribute__((unused))unsigned int num)
 {
 	stack_t *head = *stack;
 
-	if (!head)
-		putchar(10);
-
 	while (head)
 	{
 		if (head->n == 0 || head->n < 0 || head->n > 127)
