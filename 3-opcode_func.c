@@ -97,3 +97,38 @@ void f_pstr(stack_t **stack, __attribute__((unused))unsigned int num)
 	}
 	putchar(10);
 }
+
+/**
+ * f_rotl - rotates the stack to the top.
+ * @stack: Address of Head Nodr
+ * @num: line count
+ *
+ * Return: void
+ */
+
+void f_rotl(stack_t **stack, __attribute__((unused))unsigned int num)
+{
+	stack_t *current, *head = *stack, *temp;
+
+	if (!head)
+		return;
+
+	temp = head;
+	head = head->next;
+	if (head)
+		head->prev = NULL;
+	else
+		return;
+
+	current = head;
+	while (current->next)
+		current = current->next;
+
+	temp->prev = current;
+	current->next = temp;
+	temp->next = NULL;
+
+	*stack = head;
+}
+
+

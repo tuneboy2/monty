@@ -28,6 +28,7 @@ void execute(stack_t **stack, FILE *file, char *content,  int counter)
 			{"div", f_div},
 			{"pchar", f_pchar},
 			{"pstr", f_pstr},
+			{"rotl", f_rotl},
 			{NULL, NULL}
 			};
 
