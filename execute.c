@@ -17,7 +17,6 @@ void execute(stack_t **stack, char *content,  int counter)
 			{"push", f_push}, {"pall", f_pall}, {"pint", f_pint}, {"pop", f_pop},
 			{"swap", f_swap},
 			{"add", f_add},
-			{"nop", f_nop},
 			{"sub", f_sub},
 			{"mul", f_mul},
 			{"mod", f_mod},
