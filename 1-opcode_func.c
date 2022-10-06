@@ -10,11 +10,26 @@
 
 void f_push(stack_t **stack, unsigned int num)
 {
+	int i = 0;
+
 	if (!value)
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", num);
 		free_stack(*stack);
-		fclose(fil);
+		fclose(ptr);
+		exit(EXIT_FAILURE);
+	}
+
+	while (value[i] != '\0')
+	{
+		if ((value[i] >= '0' && value[i] <= '9') || value[i] == '-')
+		{
+			i++;
+			continue;
+		}
+		fprintf(stderr, "L%d: usage: push integer\n", num);
+		free_stack(*stack);
+		fclose(ptr);
 		exit(EXIT_FAILURE);
 	}
 
@@ -63,7 +78,7 @@ void f_pint(stack_t **stack, unsigned int num)
 	{
 		fprintf(stderr, "L%d: can't pint, stack empty\n", num);
 		free_stack(*stack);
-		fclose(fil);
+		fclose(ptr);
 		exit(EXIT_FAILURE);
 	}
 
@@ -85,7 +100,7 @@ void f_pop(stack_t **stack, unsigned int num)
 	if (!head)
 	{
 		fprintf(stderr, "L%d: can't pop an empty stack\n", num);
-		fclose(fil);
+		fclose(ptr);
 		free_stack(*stack);
 		exit(EXIT_FAILURE);
 	}
@@ -99,11 +114,11 @@ void f_pop(stack_t **stack, unsigned int num)
 		*stack = head->next;
 		head->next->prev = head->prev;
 	}
-	free(head);	
+	free(head);
 }
 
 /**
- * swap - swaps the top two elements of the stack.
+ * f_swap - swaps the top two elements of the stack.
  * @stack: Address of Head of Stack
  * @num: Line count
  *
@@ -124,7 +139,7 @@ void f_swap(stack_t **stack, unsigned int num)
 	if (no < 2)
 	{
 		fprintf(stderr, "L%d: can't swap, stack too short\n", num);
-		fclose(fil);
+		fclose(ptr);
 		free_stack(*stack);
 		exit(EXIT_FAILURE);
 	}

@@ -10,7 +10,6 @@
 
 int main(int ac, char **av)
 {
-	FILE *ptr;
 	char *content = NULL;
 	size_t len;
 	ssize_t read_line = 1;
@@ -24,10 +23,7 @@ int main(int ac, char **av)
 	}
 
 	ptr = fopen(av[1], "r");
-
-	fil = ptr;
-
-	if (ptr == NULL)
+	if (!ptr)
 	{
 		fprintf(stderr, "Error: Can't open file %s\n", av[1]);
 		exit(EXIT_FAILURE);
@@ -39,12 +35,12 @@ int main(int ac, char **av)
 		counter++;
 		if (read_line > 0)
 		{
-			execute(&stack, ptr, content, counter);
+			execute(&stack, content, counter);
 		}
 	}
 
 	free(content);
 	fclose(ptr);
-free_stack(stack);
+	free_stack(stack);
 	return (0);
 }

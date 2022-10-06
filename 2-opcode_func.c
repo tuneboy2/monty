@@ -1,17 +1,6 @@
  #include "monty.h"
 
 /**
- * f_nop - The opcode nop doesn’t do anything
- *
- * Return: void
- */
-
-void f_nop(__attribute__((unused))stack_t **stack, __attribute__((unused))unsigned int num)
-{
-	return;
-}
-
-/**
  * f_add - adds the top two elements of the stack.
  * @stack: Address of the Head Stack
  * @num: Line count
@@ -23,7 +12,7 @@ void f_add(stack_t **stack, unsigned int num)
 {
 	stack_t *head = *stack;
 	int no = 0, sum = 0;
-	
+
 	while (head && no < 2)
 	{
 		no++;
@@ -35,7 +24,7 @@ void f_add(stack_t **stack, unsigned int num)
 	if (no < 2)
 	{
 		fprintf(stderr, "L%d: can't add, stack too short\n", num);
-		fclose(fil);
+		fclose(ptr);
 		free_stack(*stack);
 		exit(EXIT_FAILURE);
 	}
@@ -48,8 +37,8 @@ void f_add(stack_t **stack, unsigned int num)
 }
 
 /**
- * sub - subtracts the top element of the stack from the second top element of
- * the stack
+ * f_sub - subtracts the top element of the stack from the second top element
+ * of the stack
  * @stack: Address of Head of the Stack
  * @num: Line count
  *
@@ -71,7 +60,7 @@ void f_sub(stack_t **stack, unsigned int num)
 	if (no < 2)
 	{
 		fprintf(stderr, "L%d: can't sub, stack too short\n", num);
-		fclose(fil);
+		fclose(ptr);
 		free_stack(*stack);
 		exit(EXIT_FAILURE);
 	}
@@ -84,8 +73,8 @@ void f_sub(stack_t **stack, unsigned int num)
 }
 
 /**
- * div - divides the second top element of the stack by the top element of the
- * stack.
+ * f_div - divides the second top element of the stack by the top element of
+ * the stack.
  * @stack: Address of the Head Stack
  * @num: Line count
  *
@@ -107,7 +96,7 @@ void f_div(stack_t **stack, unsigned int num)
 	if (no < 2)
 	{
 		fprintf(stderr, "L%d: can't div, stack too short\n", num);
-		fclose(fil);
+		fclose(ptr);
 		free_stack(*stack);
 		exit(EXIT_FAILURE);
 	}
@@ -116,7 +105,7 @@ void f_div(stack_t **stack, unsigned int num)
 		if (head->n == 0)
 		{
 			fprintf(stderr, "L%d: division by zero\n", num);
-			fclose(fil);
+			fclose(ptr);
 			free_stack(*stack);
 			exit(EXIT_FAILURE);
 		}
@@ -128,7 +117,7 @@ void f_div(stack_t **stack, unsigned int num)
 }
 
 /**
- * f_mul 7 multiplies the second top element of the stack with the top element
+ * f_mul - multiplies the second top element of the stack with the top element
  * of the stack.
  * @stack: Address of the Head stack
  * @num: Line count
@@ -152,7 +141,7 @@ void f_mul(stack_t **stack, unsigned int num)
 	if (no < 2)
 	{
 		fprintf(stderr, "L%d: can't mul, stack too short\n", num);
-		fclose(fil);
+		fclose(ptr);
 		free_stack(*stack);
 		exit(EXIT_FAILURE);
 	}

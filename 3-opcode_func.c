@@ -24,7 +24,7 @@ void f_mod(stack_t **stack, unsigned int num)
 	if (no < 2)
 	{
 		fprintf(stderr, "L%d: can't mod, stack too short\n", num);
-		fclose(fil);
+		fclose(ptr);
 		free_stack(*stack);
 		exit(EXIT_FAILURE);
 	}
@@ -32,7 +32,7 @@ void f_mod(stack_t **stack, unsigned int num)
 	if (head->n == 0)
 	{
 		fprintf(stderr, "L%d: division by zero\n", num);
-		fclose(fil);
+		fclose(ptr);
 		free_stack(*stack);
 		exit(EXIT_FAILURE);
 	}
@@ -58,7 +58,7 @@ void f_pchar(stack_t **stack, unsigned int num)
 	if (!head)
 	{
 		fprintf(stderr, "L%d: can't pchar, stack empty\n", num);
-		fclose(fil);
+		fclose(ptr);
 		free_stack(*stack);
 		exit(EXIT_FAILURE);
 	}
@@ -67,7 +67,7 @@ void f_pchar(stack_t **stack, unsigned int num)
 	if (no < 0 ||  no > 127)
 	{
 		fprintf(stderr, "L%d: can't pchar, value out of range\n", num);
-		fclose(fil);
+		fclose(ptr);
 		free_stack(*stack);
 		exit(EXIT_FAILURE);
 	}
@@ -78,7 +78,7 @@ void f_pchar(stack_t **stack, unsigned int num)
 /**
  * f_pstr - prints the string starting at the top of the stack.
  * @stack: Address of Head Stack
- * @num; line countet
+ * @num: line countet
  *
  * Return: void
  */
@@ -91,7 +91,7 @@ void f_pstr(stack_t **stack, __attribute__((unused))unsigned int num)
 	{
 		if (head->n == 0 || head->n < 0 || head->n > 127)
 			break;
-	
+
 		putchar(head->n);
 		head = head->next;
 	}

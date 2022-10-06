@@ -9,7 +9,7 @@
 
 #define BUFSIZE 100
 
-FILE *fil;
+FILE *ptr;
 char *value;
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -44,7 +44,7 @@ typedef struct instruction_s
 
 char *_realloc(char *, int);
 stack_t *add_node(stack_t **head, int n);
-void execute(stack_t **, FILE *, char *, int);
+void execute(stack_t **, char *, int);
 void free_stack(stack_t *);
 
 /* opcodes */
