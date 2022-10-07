@@ -14,8 +14,8 @@ void execute(stack_t **stack, char *content,  int counter)
 	int i = 0;
 	char *op;
 	instruction_t opst[] = {
-			{"push", f_push}, {"pall", f_pall}, {"pint", f_pint}, {"pop", f_pop},
-			{"swap", f_swap},
+			{"push", f_push}, {"pall", f_pall}, {"pint", f_pint}, {"pop", f_pop},{"swap", f_swap},
+			{"nop", f_nop},
 			{"add", f_add},
 			{"sub", f_sub},
 			{"mul", f_mul},

@@ -37,6 +37,19 @@ void f_add(stack_t **stack, unsigned int num)
 }
 
 /**
+ * f_nop - Does nothing
+ * @stack: Address of stack pointer
+ * @num: line count
+ *
+ * Return: void
+ */
+
+void f_nop(__attribute__((unused))stack_t **stack, __attribute__((unused))unsigned int num)
+{
+	return;
+}
+
+/**
  * f_sub - subtracts the top element of the stack from the second top element
  * of the stack
  * @stack: Address of Head of the Stack
