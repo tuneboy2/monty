@@ -42,11 +42,11 @@ typedef struct instruction_s
 } instruction_t;
 
 
-char *_realloc(char *, int);
 stack_t *add_node(stack_t **head, int n);
 void execute(stack_t **, char *, int);
 void free_stack(stack_t *);
 stack_t *add_node_end(stack_t **, int);
+
 /* opcodes */
 void f_push(stack_t **, unsigned int);
 void f_pall(stack_t **, unsigned int);

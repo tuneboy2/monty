@@ -89,7 +89,7 @@ void f_pstr(stack_t **stack, __attribute__((unused))unsigned int num)
 
 	while (head)
 	{
-		if (head->n == 0 || head->n < 0 || head->n > 127)
+		if (head->n <= 0 || head->n > 127)
 			break;
 
 		putchar(head->n);
