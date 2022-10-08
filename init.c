@@ -29,6 +29,7 @@ int main(int ac, char **av)
 		exit(EXIT_FAILURE);
 	}
 
+	key_value = 0;
 	while (read_line > 0)
 	{
 		read_line = getline(&content, &len, ptr);

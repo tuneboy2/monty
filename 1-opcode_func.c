@@ -33,7 +33,10 @@ void f_push(stack_t **stack, unsigned int num)
 		exit(EXIT_FAILURE);
 	}
 
-	add_node(stack, atoi(value));
+	if (key_value == 0)
+		add_node(stack, atoi(value));
+	else
+		add_node_end(stack, atoi(value));
 
 }
 

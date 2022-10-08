@@ -42,6 +42,16 @@ void execute(stack_t **stack, char *content,  int counter)
 		}
 		i++;
 	}
+	if (strcmp(op, "stack") == 0)
+	{
+		key_value = 0;
+		return;
+	}
+	else if (strcmp(op, "queue") == 0)
+	{
+		key_value = 1;
+		return;
+	}
 	if (op && opst[i].opcode == NULL)
 	{
 		fprintf(stderr, "L%d: unknown instruction %s\n", counter, op);
