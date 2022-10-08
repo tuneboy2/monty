@@ -56,8 +56,6 @@ Available operation codes:
 |rotr   | Rotates the bottom of the stack to the top of the stack.|
 |stack  | This is the default behavior. Sets the format of the data into a stack (LIFO).|
 |queue  | Sets the format of t the top two elements of the stack from the second top element. The result is then stored in the second node, and the first node is removed.|
-|mod    | Computes the remainder of the top two elements of the stack from the second top element. The result is then stored in the second node, and the first node is removed.|
-
 
 ## Author :black_nib:
 - **Oladapo Olatunbosun** <[tuneboy2](https://github.com/tuneboy2)>
