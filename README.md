@@ -40,7 +40,7 @@ Available operation codes:
 | Opcode | Description |
 |------------------- | --------------|
 |push   | Pushes an element to the stack. e.g (push 1 # pushes 1 into the stack)|
-|pall   | Prints all the values on the stack, starting from the to of the stack.|
+|pall   | Prints all the values on the stack, starting from the top of the stack.|
 |pint   | Prints the value at the top of the stack.|
 |pop    | Removes the to element of the stack. |
 |swap   | Swaps the top to elements of the stack.|
@@ -55,7 +55,7 @@ Available operation codes:
 |rotl   | Rotates the top of the stack to the bottom of the stack.|
 |rotr   | Rotates the bottom of the stack to the top of the stack.|
 |stack  | This is the default behavior. Sets the format of the data into a stack (LIFO).|
-|queue  | Sets the format of t the top two elements of the stack from the second top element. The result is then stored in the second node, and the first node is removed.|
+|queue  | Sets the format of the data into a queue (FIFO)|
 
 ## Author :black_nib:
 - **Oladapo Olatunbosun** <[tuneboy2](https://github.com/tuneboy2)>
